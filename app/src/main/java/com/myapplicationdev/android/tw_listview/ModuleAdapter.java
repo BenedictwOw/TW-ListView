@@ -14,7 +14,7 @@ public class ModuleAdapter extends ArrayAdapter<Module> {
 
     private ArrayList<Module> module;
     private Context context;
-    private TextView tvYear;
+    private TextView tvMod;
     private ImageView ivImage;
 
     public ModuleAdapter(Context context, int resource, ArrayList<Module> objects){
@@ -34,18 +34,15 @@ public class ModuleAdapter extends ArrayAdapter<Module> {
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         // "Inflate" the row.xml as the layout for the View object
-        View rowView = inflater.inflate(R.layout.row, parent, false);
+        View rowView = inflater.inflate(R.layout.row2, parent, false);
 
-        // Get the TextView object
-        tvYear = (TextView)rowView.findViewById(R.id.textView);
-        // Get the ImageView object
-        ivImage = (ImageView) rowView.findViewById(R.id.imageView);
+        tvMod = (TextView) rowView.findViewById(R.id.tvMod);
+        ivImage = (ImageView) rowView.findViewById(R.id.ivProg);
 
-        // The parameter "position" is the index of the
-        //  row ListView is requesting.
-        //  We get back the food at the same index.
+
         Module currentModule = module.get(position);
         // Set the TextView to show the food
+        tvMod.setText(currentModule.getModule());
 
         if (currentModule.isModule()) {
             ivImage.setImageResource(R.drawable.prog);
