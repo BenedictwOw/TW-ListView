@@ -1,42 +1,30 @@
 package com.myapplicationdev.android.tw_listview;
 
 
-import java.util.ArrayList;
-
 public class Module {
-    private String year;
-    private ArrayList module;
-    private boolean prog;
-
-
-    public Module(String year,ArrayList module, boolean prog) {
-        this.year = year;
-        this.prog = prog;
+    private String module;
+    private boolean isModule;
+    public Module(String module, boolean isModule) {
         this.module = module;
+        this.isModule = isModule;
     }
 
-    public ArrayList getModule() {
+
+
+    public boolean isModule() {
+        return isModule;
+    }
+
+    public void setModule(boolean module) {
+        isModule = module;
+    }
+
+
+    public String getModule() {
         return module;
     }
 
-    public void setModule(ArrayList module) {
+    public void setModule(String module) {
         this.module = module;
     }
-
-    public String getYear() {
-        return year;
-    }
-
-    public void setYear(String year) {
-        this.year = year;
-    }
-
-    public boolean isProg() {
-        return prog;
-    }
-
-    public void setProg(boolean prog) {
-        this.prog = prog;
-    }
-
 }

@@ -47,17 +47,13 @@ public class ModuleAdapter extends ArrayAdapter<Module> {
         Module currentModule = module.get(position);
         // Set the TextView to show the food
 
-        tvYear.setText(currentModule.getYear());
-        // Set the image to star or nostar accordingly
-        if(currentModule.isProg()) {
+        if (currentModule.isModule()) {
             ivImage.setImageResource(R.drawable.prog);
-        }
-        else {
+            // Return the nicely done up View to the ListView
+
+        }else{
             ivImage.setImageResource(R.drawable.nonprog);
         }
-        // Return the nicely done up View to the ListView
         return rowView;
     }
-
-
 }
