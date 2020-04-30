@@ -1,9 +1,15 @@
 package com.myapplicationdev.android.tw_listview;
 
+
 public class Module {
-    public Module(String year, boolean prog) {
+    private String year;
+    private String module;
+    private boolean prog;
+
+    public Module(String year,String module, boolean prog) {
         this.year = year;
         this.prog = prog;
+        this.module = module;
     }
 
     public String getYear() {
@@ -21,9 +27,5 @@ public class Module {
     public void setProg(boolean prog) {
         this.prog = prog;
     }
-
-    private String year;
-    private boolean prog;
-
 
 }

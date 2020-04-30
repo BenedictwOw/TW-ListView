@@ -14,8 +14,8 @@ public class ModuleAdapter extends ArrayAdapter<Module> {
 
     private ArrayList<Module> module;
     private Context context;
-    private TextView tvFoodName;
-    private ImageView ivStar;
+    private TextView tvYear;
+    private ImageView ivImage;
 
     public ModuleAdapter(Context context, int resource, ArrayList<Module> objects){
         super(context, resource, objects);
@@ -37,28 +37,27 @@ public class ModuleAdapter extends ArrayAdapter<Module> {
         View rowView = inflater.inflate(R.layout.row, parent, false);
 
         // Get the TextView object
-        //tvFoodName = (TextView) rowView.findViewById(R.id.tvFoodName);
+        tvYear = (TextView)rowView.findViewById(R.id.textView);
         // Get the ImageView object
-        //ivStar = (ImageView) rowView.findViewById(R.id.ivStar);
-
+        ivImage = (ImageView) rowView.findViewById(R.id.imageView);
 
         // The parameter "position" is the index of the
         //  row ListView is requesting.
         //  We get back the food at the same index.
-        //Food currentFood = food.get(position);
+        Module currentModule = module.get(position);
         // Set the TextView to show the food
 
-        //tvFoodName.setText(currentFood.getName());
+        tvYear.setText(currentModule.getYear());
         // Set the image to star or nostar accordingly
-        //if(currentFood.isStar()) {
-            //ivStar.setImageResource(R.drawable.star);
-        //}
-       // else {
-            //ivStar.setImageResource(R.drawable.nostar);
-        //}
+        if(currentModule.isProg()) {
+            ivImage.setImageResource(R.drawable.prog);
+        }
+        else {
+            ivImage.setImageResource(R.drawable.nonprog);
+        }
         // Return the nicely done up View to the ListView
         return rowView;
     }
-    
+
 
 }
